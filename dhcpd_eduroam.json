@@ -1,0 +1,23 @@
+{
+  "id": "0fa47984-0001-46f1-9ca5-000000000001",
+  "measurement": "dhcpd_eduroam",
+  "app": "eduroam",
+  "autoflow": true,
+  "cells": [
+    {
+      "x": 0,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "i": "cc9ba2b6-0001-4396-0001-819bb7ac7ce1",
+      "name": "dhcpd requests by network",
+      "queries": [
+        {
+          "query": "SELECT mean(\"count\") AS \"requests\" FROM dhcpd_eduroam",
+          "groupbys": [ "\"net\"" ],
+          "wheres": []
+        }
+      ]
+    }
+  ]
+}

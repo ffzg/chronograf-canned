@@ -1,0 +1,53 @@
+{
+  "id": "ff41d044-0001-4522-8de7-9e39e3a1b5de",
+  "measurement": "nstat",
+  "app": "nstat",
+  "autoflow": true,
+  "cells": [
+    {
+      "x": 0,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "i": "cf5d0608-0002-4244-a55f-accf520da3a1",
+      "name": "network octets",
+      "queries": [
+        {
+          "query": "SELECT non_negative_derivative(max(\"IpExtInOctets\")) AS \"in\" FROM nstat",
+          "groupbys": [],
+          "wheres": []
+        },
+        {
+          "query": "SELECT non_negative_derivative(max(\"IpExtOutOctets\")) AS \"out\" FROM nstat",
+          "groupbys": [],
+          "wheres": []
+        }
+      ]
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "i": "63503235-0003-49a7-ae0a-000000000001",
+      "name": "random",
+      "queries": [
+        {
+          "query": "SELECT non_negative_derivative(max(\"Ip6InECT0Pkts\")) AS \"Ip6InECT0Pkts\" FROM nstat",
+          "groupbys": [],
+          "wheres": []
+        },
+        {
+          "query": "SELECT non_negative_derivative(max(\"IpExtInMcastOctets\")) AS \"IpExtInMcastOctets\" FROM nstat",
+          "groupbys": [],
+          "wheres": []
+        },
+        {
+          "query": "SELECT non_negative_derivative(max(\"Ip6InMcastPkts\")) AS \"Ip6InMcastPkts\" FROM nstat",
+          "groupbys": [],
+          "wheres": []
+        }
+      ]
+    }
+  ]
+}

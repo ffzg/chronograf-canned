@@ -1,0 +1,23 @@
+{
+  "id": "0fa47984-0001-46f1-9ca5-100000000001",
+  "measurement": "ceph_pool_stats",
+  "app": "ceph",
+  "autoflow": true,
+  "cells": [
+    {
+      "x": 0,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "i": "cc9ba2b6-0001-4396-1001-819bb7ac7ce1",
+      "name": "ceph"
+      "queries": [
+        {
+          "query": "SELECT mean(\"op_per_sec\") AS \"op_per_sec\" FROM ceph_pool_stats",
+          "groupbys": [ "\"host\"" ],
+          "netwheres": []
+        }
+      ]
+    }
+  ]
+}

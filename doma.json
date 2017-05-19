@@ -1,0 +1,24 @@
+{
+  "id": "6dfb4d49-20dc-4157-9018-2b1b1cb75c2d",
+  "measurement": "temperature",
+  "app": "apache",
+  "autoflow": false,
+  "cells": [
+    {
+      "x": 0,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "i": "0246e457-916b-43e3-be99-211c4cbc03e8",
+      "name": "temperature",
+      "queries": [
+        {
+          "query": "SELECT \"value\" AS \"temperature\" FROM temperature",
+          "groupbys": [
+          ],
+          "wheres": []
+        }
+      ]
+    }
+  ]
+}
