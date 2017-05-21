@@ -1,7 +1,7 @@
 {
   "id": "beefd045-0001-4522-8de7-9e39e3a1b5de",
   "measurement": "net",
-  "app": "net",
+  "app": "net_if",
   "autoflow": true,
   "cells": [
     {
@@ -13,6 +13,7 @@
       "name": "received Mbit/s",
       "queries": [
         {
+          "label": "Mb/s",
           "query": "SELECT non_negative_derivative(max(\"bytes_recv\"), 1s) / 125000 AS \"recv_mbps\" FROM net",
           "groupbys": [ "\"interface\"" ],
           "wheres": []
@@ -28,6 +29,7 @@
       "name": "sent Mbit/s",
       "queries": [
         {
+          "label": "Mb/s",
           "query": "SELECT non_negative_derivative(max(\"bytes_sent\"), 1s) / 125000 AS \"sent_mbps\" FROM net",
           "groupbys": [ "\"interface\"" ],
           "wheres": []
@@ -43,7 +45,7 @@
       "name": "packets_recv",
       "queries": [
         {
-          "query": "SELECT non_negative_derivative(max(\"packets_recv\")) AS \"packets_recv\" FROM net",
+          "query": "SELECT non_negative_derivative(max(\"packets_recv\"), 1s) AS \"packets_recv\" FROM net",
           "groupbys": [ "\"interface\"" ],
           "wheres": []
         }
@@ -58,7 +60,7 @@
       "name": "packets_sent",
       "queries": [
         {
-          "query": "SELECT non_negative_derivative(max(\"packets_sent\")) AS \"packets_sent\" FROM net",
+          "query": "SELECT non_negative_derivative(max(\"packets_sent\"), 1s) AS \"packets_sent\" FROM net",
           "groupbys": [ "\"interface\"" ],
           "wheres": []
         }
