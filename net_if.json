@@ -42,7 +42,7 @@
       "w": 4,
       "h": 4,
       "i": "beef0008-0004-4244-a55f-accf520da3a1",
-      "name": "packets_recv",
+      "name": "packets_recv/s",
       "queries": [
         {
           "query": "SELECT non_negative_derivative(max(\"packets_recv\"), 1s) AS \"packets_recv\" FROM net",
@@ -57,7 +57,7 @@
       "w": 4,
       "h": 4,
       "i": "beef3235-0004-49a7-ae0a-000000000001",
-      "name": "packets_sent",
+      "name": "packets_sent/s",
       "queries": [
         {
           "query": "SELECT non_negative_derivative(max(\"packets_sent\"), 1s) AS \"packets_sent\" FROM net",
@@ -72,25 +72,15 @@
       "w": 4,
       "h": 4,
       "i": "beef0008-0008-4244-a55f-accf520da3a1",
-      "name": "drop_in",
+      "name": "drop/s",
       "queries": [
         {
-          "query": "SELECT non_negative_derivative(max(\"drop_in\")) AS \"drop_in\" FROM net",
+          "query": "SELECT non_negative_derivative(max(\"drop_in\"),1s) AS \"in\" FROM net",
           "groupbys": [ "\"interface\"" ],
           "wheres": []
-        }
-      ]
-    },
-    {
-      "x": 4,
-      "y": 8,
-      "w": 4,
-      "h": 4,
-      "i": "beef3235-0008-49a7-ae0a-000000000001",
-      "name": "drop_out",
-      "queries": [
+        },
         {
-          "query": "SELECT non_negative_derivative(max(\"drop_out\")) AS \"drop_out\" FROM net",
+          "query": "SELECT non_negative_derivative(max(\"drop_out\"),1s) AS \"out\" FROM net",
           "groupbys": [ "\"interface\"" ],
           "wheres": []
         }
