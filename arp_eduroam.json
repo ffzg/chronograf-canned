@@ -13,7 +13,7 @@
       "name": "arp entries by network",
       "queries": [
         {
-          "query": "SELECT mean(\"mac_count\") AS \"mac_count\" FROM arp_eduroam",
+          "query": "SELECT max(\"mac_count\") AS \"mac_count\" FROM arp_eduroam",
           "groupbys": [ "\"net\"" ],
           "wheres": []
         }
