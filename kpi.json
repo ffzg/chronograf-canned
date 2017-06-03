@@ -1,0 +1,68 @@
+{
+  "id": "abbad044-0001-4522-8de7-9e39e3a1b5de",
+  "measurement": "kpi",
+  "app": "kpi",
+  "autoflow": true,
+  "cells": [
+    {
+      "x": 0,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "i": "abba0608-0002-4244-a55f-accf520da3a1",
+      "name": "lighnt",
+      "queries": [
+        {
+          "query": "SELECT mean(\"A0\") AS \"LDR\" FROM kpi",
+          "groupbys": [],
+          "wheres": []
+        }
+      ]
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "i": "abba3235-0003-49a7-ae0a-000000000001",
+      "name": "Pressure",
+      "queries": [
+        {
+          "query": "SELECT mean(\"Pressure\") FROM \"kpi\"",
+          "groupbys": [],
+          "wheres": []
+        }
+      ]
+    },
+    {
+      "x": 8,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "i": "abba3235-0003-49a7-ae0a-000000000002",
+      "name": "Temp",
+      "queries": [
+        {
+          "query": "SELECT mean(\"Temp\") FROM \"kpi\"",
+          "groupbys": [],
+          "wheres": []
+        }
+      ]
+    },
+    {
+      "x": 12,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "i": "abba3235-0003-49a7-ae0a-000000000003",
+      "name": "PIR",
+      "queries": [
+        {
+          "query": "SELECT max(\"PIR\") FROM \"kpi\"",
+          "groupbys": [],
+          "wheres": []
+        }
+      ]
+    }
+  ]
+}
