@@ -1,6 +1,6 @@
 {
-  "id": "0fa47984-0001-46f1-9ca5-100000000001",
-  "measurement": "ceph_pool_stats",
+  "id": "ce000001-0001-46f1-9ca5-100000000001",
+  "measurement": "ceph_pgmap",
   "app": "ceph",
   "autoflow": true,
   "cells": [
@@ -9,11 +9,16 @@
       "y": 0,
       "w": 4,
       "h": 4,
-      "i": "cc9ba2b6-0001-4396-1001-819bb7ac7ce1",
-      "name": "ceph"
+      "i": "ce000001-0001-4396-1001-819bb7ac7ce1",
+      "name": "bytes/sec",
       "queries": [
         {
-          "query": "SELECT mean(\"op_per_sec\") AS \"op_per_sec\" FROM ceph_pool_stats",
+          "query": "SELECT mean(\"read_bytes_sec\") AS \"read\" FROM ceph_pgmap",
+          "groupbys": [ "\"host\"" ],
+          "netwheres": []
+        },
+        {
+          "query": "SELECT mean(\"write_bytes_sec\") AS \"write\" FROM ceph_pgmap",
           "groupbys": [ "\"host\"" ],
           "netwheres": []
         }
