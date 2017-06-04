@@ -110,7 +110,7 @@
         {
           "query": "SELECT sum(\"value\") AS \"count\" FROM \"bro_weird\"",
           "groupbys": [ "\"name\""],
-          "wheres": []
+          "wheres": [ "\"name\" !~ /^dns_/ and \"name\" !~ /^data_before/ and \"name\" !~ /^possible_split_routing/" ]
         }
       ]
     }
