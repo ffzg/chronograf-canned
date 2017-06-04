@@ -15,12 +15,12 @@
         {
           "query": "SELECT mean(\"read_bytes_sec\") AS \"read\" FROM ceph_pgmap",
           "groupbys": [ "\"host\"" ],
-          "netwheres": []
+          "wheres": []
         },
         {
           "query": "SELECT mean(\"write_bytes_sec\") AS \"write\" FROM ceph_pgmap",
           "groupbys": [ "\"host\"" ],
-          "netwheres": []
+          "wheres": []
         }
       ]
     }
