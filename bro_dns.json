@@ -1,0 +1,38 @@
+{
+  "id": "b1000001-0001-46f1-9ca5-100000000001",
+  "measurement": "bro_dns_query",
+  "app": "bro",
+  "autoflow": true,
+  "cells": [
+    {
+      "x": 0,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "i": "b1000001-0001-4396-1001-819bb7ac7ce1",
+      "name": "dns query types",
+      "queries": [
+        {
+          "query": "SELECT mean(\"value\") AS \"count\" FROM \"bro_dns_query\"",
+          "groupbys": [ "\"type\"" ],
+          "netwheres": []
+        }
+      ]
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "i": "b1000002-0001-4396-1001-819bb7ac7ce1",
+      "name": "dns query types max",
+      "queries": [
+        {
+          "query": "SELECT max(\"value\") AS \"max\" FROM \"bro_dns_query\"",
+          "groupbys": [ "\"type\"" ],
+          "netwheres": []
+        }
+      ]
+    }
+  ]
+}
