@@ -2,13 +2,28 @@
   "id": "b1000001-0001-46f1-9ca5-100000000001",
   "measurement": "bro_dns_query",
   "app": "bro",
-  "autoflow": true,
+  "autoflow": false,
   "cells": [
+    {
+      "x": 4,
+      "y": 4,
+      "w": 4,
+      "h": 2,
+      "i": "b1000006-0001-4396-1001-819bb7ac7ce1",
+      "name": "bro_log",
+      "queries": [
+        {
+          "query": "SELECT sum(\"value\") AS \"log\" FROM \"bro_log\"",
+          "groupbys": [ "\"log\""],
+          "wheres": []
+        }
+      ]
+    },
     {
       "x": 0,
       "y": 0,
       "w": 4,
-      "h": 4,
+      "h": 2,
       "i": "b1000001-0001-4396-1001-819bb7ac7ce1",
       "name": "bro_dns",
       "queries": [
@@ -23,7 +38,7 @@
       "x": 4,
       "y": 0,
       "w": 4,
-      "h": 4,
+      "h": 2,
       "i": "b1000003-0001-4396-1001-819bb7ac7ce1",
       "name": "bro_conn",
       "queries": [
@@ -38,7 +53,7 @@
       "x": 8,
       "y": 0,
       "w": 4,
-      "h": 4,
+      "h": 2,
       "i": "b1000004-0001-4396-1001-819bb7ac7ce1",
       "name": "bro_ssh",
       "queries": [
@@ -53,7 +68,7 @@
       "x": 0,
       "y": 4,
       "w": 4,
-      "h": 4,
+      "h": 2,
       "i": "b1000005-0001-4396-1001-819bb7ac7ce1",
       "name": "bro_notice",
       "queries": [
@@ -65,25 +80,25 @@
       ]
     },
     {
-      "x": 4,
+      "x": 8,
       "y": 4,
       "w": 4,
-      "h": 4,
-      "i": "b1000006-0001-4396-1001-819bb7ac7ce1",
-      "name": "bro_log",
+      "h": 2,
+      "i": "b1000008-0001-4396-1001-819bb7ac7ce1",
+      "name": "bro_weird",
       "queries": [
         {
-          "query": "SELECT sum(\"value\") AS \"log\" FROM \"bro_log\"",
-          "groupbys": [ "\"log\""],
-          "wheres": []
+          "query": "SELECT sum(\"value\") AS \"count\" FROM \"bro_weird\"",
+          "groupbys": [ "\"name\""],
+          "wheres": [ "\"name\" !~ /^dns_/ and \"name\" !~ /^data_before/ and \"name\" !~ /^possible_split_routing/" ]
         }
       ]
     },
     {
-      "x": 8,
-      "y": 4,
+      "x": 4,
+      "y": 8,
       "w": 4,
-      "h": 4,
+      "h": 2,
       "i": "b1000007-0001-4396-1001-819bb7ac7ce1",
       "name": "bro_radius",
       "queries": [
@@ -101,18 +116,19 @@
     },
     {
       "x": 0,
-      "y": 8,
+      "y": 4,
       "w": 4,
-      "h": 4,
-      "i": "b1000008-0001-4396-1001-819bb7ac7ce1",
-      "name": "bro_weird",
+      "h": 2,
+      "i": "b1000008-0002-4396-1001-819bb7ac7ce1",
+      "name": "bro_known-services",
       "queries": [
         {
-          "query": "SELECT sum(\"value\") AS \"count\" FROM \"bro_weird\"",
-          "groupbys": [ "\"name\""],
-          "wheres": [ "\"name\" !~ /^dns_/ and \"name\" !~ /^data_before/ and \"name\" !~ /^possible_split_routing/" ]
+          "query": "SELECT sum(\"value\") AS \"service\" FROM \"bro_known-services\"",
+          "groupbys": [ "\"service\""],
+          "wheres": []
         }
-      ]
+      ],
+      "type": "line-stepplot"
     }
   ]
 }
