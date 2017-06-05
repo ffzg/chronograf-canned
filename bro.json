@@ -91,6 +91,11 @@
           "query": "SELECT sum(\"value\") AS \"logins\" FROM \"bro_radius_username\"",
           "groupbys": [],
           "wheres": []
+        },
+        {
+          "query": "SELECT sum(\"value\") AS \"connect\" FROM \"bro_radius_connect_info\"",
+          "groupbys": [],
+          "wheres": []
         }
       ]
     },
