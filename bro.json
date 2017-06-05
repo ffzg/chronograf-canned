@@ -10,7 +10,7 @@
       "w": 4,
       "h": 4,
       "i": "b1000001-0001-4396-1001-819bb7ac7ce1",
-      "name": "dns query types",
+      "name": "bro_dns",
       "queries": [
         {
           "query": "SELECT mean(\"value\") AS \"count\" FROM \"bro_dns_query\"",
@@ -25,13 +25,8 @@
       "w": 4,
       "h": 4,
       "i": "b1000003-0001-4396-1001-819bb7ac7ce1",
-      "name": "bro_conn_log",
+      "name": "bro_conn",
       "queries": [
-        {
-          "query": "SELECT mean(\"value\") AS \"log\" FROM \"bro_conn_log\"",
-          "groupbys": [],
-          "wheres": []
-        },
         {
           "query": "SELECT mean(\"value\") AS \"conn\" FROM \"bro_conn\"",
           "groupbys": [ "\"vlan\"" ],
