@@ -1,12 +1,12 @@
 {
-  "id": "b1000001-0001-46f1-9ca5-100000000001",
-  "measurement": "bro_dns_query",
+  "id": "b1000001-0002-46f1-9ca5-100000000001",
+  "measurement": "bro_log",
   "app": "bro",
   "autoflow": false,
   "cells": [
     {
-      "x": 4,
-      "y": 4,
+      "x": 0,
+      "y": 0,
       "w": 4,
       "h": 2,
       "i": "b1000006-0001-4396-1001-819bb7ac7ce1",
@@ -20,7 +20,7 @@
       ]
     },
     {
-      "x": 0,
+      "x": 4,
       "y": 0,
       "w": 4,
       "h": 2,
@@ -28,8 +28,8 @@
       "name": "bro_dns",
       "queries": [
         {
-          "query": "SELECT mean(\"value\") AS \"count\" FROM \"bro_dns_query\"",
-          "groupbys": [ "\"type\"" ],
+          "query": "SELECT mean(\"query-type\") AS \"count\" FROM \"bro_dns\"",
+          "groupbys": [ "\"type_tag\"" ],
           "wheres": []
         }
       ]
@@ -43,8 +43,8 @@
       "name": "bro_conn",
       "queries": [
         {
-          "query": "SELECT mean(\"value\") AS \"conn\" FROM \"bro_conn\"",
-          "groupbys": [ "\"vlan\"" ],
+          "query": "SELECT mean(\"vlan\") AS \"conn\" FROM \"bro_conn\"",
+          "groupbys": [ "\"vlan_tag\"" ],
           "wheres": []
         }
       ]
@@ -62,7 +62,8 @@
           "groupbys": [ "\"ok\"" ],
           "wheres": []
         }
-      ]
+      ],
+      "type": "line-stepplot"
     },
     {
       "x": 0,
@@ -73,11 +74,12 @@
       "name": "bro_notice",
       "queries": [
         {
-          "query": "SELECT sum(\"value\") AS \"notice\" FROM \"bro_notice\"",
-          "groupbys": [ "\"type\""],
+          "query": "SELECT sum(\"note\") AS \"note\" FROM \"bro_notice\"",
+          "groupbys": [ "\"note_tag\""],
           "wheres": []
         }
-      ]
+      ],
+      "type": "line-stepplot"
     },
     {
       "x": 8,
@@ -88,22 +90,23 @@
       "name": "bro_weird",
       "queries": [
         {
-          "query": "SELECT sum(\"value\") AS \"count\" FROM \"bro_weird\"",
-          "groupbys": [ "\"name\""],
-          "wheres": [ "\"name\" !~ /^dns_/ and \"name\" !~ /^data_before/ and \"name\" !~ /^possible_split_routing/" ]
+          "query": "SELECT sum(\"name\") AS \"count\" FROM \"bro_weird\"",
+          "groupbys": [ "\"name_tag\""],
+          "wheres": [ "\"name_tag\" !~ /^dns_/ and \"name_tag\" !~ /^data_before/ and \"name_tag\" !~ /^possible_split_routing/" ]
         }
-      ]
+      ],
+      "type": "line-stepplot"
     },
     {
-      "x": 4,
-      "y": 8,
+      "x": 8,
+      "y": 4,
       "w": 4,
       "h": 2,
       "i": "b1000007-0001-4396-1001-819bb7ac7ce1",
       "name": "bro_radius",
       "queries": [
         {
-          "query": "SELECT sum(\"value\") AS \"logins\" FROM \"bro_radius_username\"",
+          "query": "SELECT sum(\"value\") AS \"usernames\" FROM \"bro_radius_usernames\"",
           "groupbys": [],
           "wheres": []
         },
@@ -120,15 +123,31 @@
       "w": 4,
       "h": 2,
       "i": "b1000008-0002-4396-1001-819bb7ac7ce1",
-      "name": "bro_known-services",
+      "name": "bro_known_services",
       "queries": [
         {
-          "query": "SELECT sum(\"value\") AS \"service\" FROM \"bro_known-services\"",
-          "groupbys": [ "\"service\""],
+          "query": "SELECT sum(\"service\") AS \"service\" FROM \"bro_known_services\"",
+          "groupbys": [ "\"service_tag\""],
           "wheres": []
         }
       ],
       "type": "line-stepplot"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "w": 4,
+      "h": 2,
+      "i": "b1000010-0010-4396-1001-819bb7ac7ce1",
+      "name": "bro_known_services_host",
+      "queries": [
+        {
+          "query": "SELECT sum(\"value\") AS \"service\" FROM \"bro_known_services_host\"",
+          "groupbys": [ "\"service\""],
+          "wheres": []
+        }
+      ],
+      "type": "line"
     }
   ]
 }
