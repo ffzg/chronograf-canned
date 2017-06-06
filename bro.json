@@ -92,7 +92,7 @@
         {
           "query": "SELECT sum(\"name\") AS \"count\" FROM \"bro_weird\"",
           "groupbys": [ "\"name_tag\""],
-          "wheres": [ "\"name_tag\" !~ /^dns_/ and \"name_tag\" !~ /^data_before/ and \"name_tag\" !~ /^possible_split_routing/" ]
+          "wheres": [ "\"name_tag\" !~ /^dns_/ and \"name_tag\" !~ /^data_before/ and \"name_tag\" !~ /^possible_split_routing/ and \"name_tag\" !~ /^binpac exception/" ]
         }
       ],
       "type": "line-stepplot"
