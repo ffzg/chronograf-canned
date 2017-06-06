@@ -148,6 +148,38 @@
         }
       ],
       "type": "line"
+    },
+    {
+      "x": 0,
+      "y": 12,
+      "w": 4,
+      "h": 2,
+      "i": "b1000010-0010-0012-1001-819bb7ac7ce1",
+      "name": "bro_http status_code",
+      "queries": [
+        {
+          "query": "SELECT sum(\"status_code\") AS \"status_code\" FROM \"bro_http\"",
+          "groupbys": [ "\"status_code_tag\""],
+          "wheres": []
+        }
+      ],
+      "type": "line"
+    },
+    {
+      "x": 4,
+      "y": 12,
+      "w": 4,
+      "h": 2,
+      "i": "b1000010-0011-0012-1001-819bb7ac7ce1",
+      "name": "bro_http private",
+      "queries": [
+        {
+          "query": "SELECT sum(\"private\") AS \"private\" FROM \"bro_http\"",
+          "groupbys": [ "\"filter\""],
+          "wheres": []
+        }
+      ],
+      "type": "line"
     }
   ]
 }
