@@ -180,6 +180,27 @@
         }
       ],
       "type": "line"
+    },
+    {
+      "x": 8,
+      "y": 12,
+      "w": 4,
+      "h": 2,
+      "i": "b1000010-0008-0012-1001-819bb7ac7ce1",
+      "name": "bro_http hosts",
+      "queries": [
+        {
+          "query": "SELECT sum(\"value\") AS \"orig_h\" FROM \"bro_http_orig_h\"",
+          "groupbys": [],
+          "wheres": []
+        },
+        {
+          "query": "SELECT sum(\"value\") AS \"resp_h\" FROM \"bro_http_resp_h\"",
+          "groupbys": [],
+          "wheres": []
+        }
+      ],
+      "type": "line"
     }
   ]
 }
