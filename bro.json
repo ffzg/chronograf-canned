@@ -171,10 +171,10 @@
       "w": 4,
       "h": 2,
       "i": "b1000010-0011-0012-1001-819bb7ac7ce1",
-      "name": "bro_http private",
+      "name": "bro_http local",
       "queries": [
         {
-          "query": "SELECT sum(\"private\") AS \"private\" FROM \"bro_http\"",
+          "query": "SELECT sum(\"local\") AS \"local\" FROM \"bro_http\"",
           "groupbys": [ "\"filter\""],
           "wheres": []
         }
