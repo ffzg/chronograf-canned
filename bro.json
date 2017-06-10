@@ -71,11 +71,11 @@
       "w": 4,
       "h": 2,
       "i": "b1000005-0001-4396-1001-819bb7ac7ce1",
-      "name": "bro_notice",
+      "name": "bro_dhcp_trans",
       "queries": [
         {
-          "query": "SELECT sum(\"note\") AS \"note\" FROM \"bro_notice\"",
-          "groupbys": [ "\"note_tag\""],
+          "query": "SELECT sum(\"value\") AS \"dhcp\" FROM \"bro_dhcp_trans\"",
+          "groupbys": [],
           "wheres": []
         }
       ],
