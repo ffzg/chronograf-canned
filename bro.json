@@ -87,15 +87,15 @@
       "w": 4,
       "h": 2,
       "i": "b1000008-0001-4396-1001-819bb7ac7ce1",
-      "name": "bro_weird",
+      "name": "bro_files",
       "queries": [
         {
-          "query": "SELECT sum(\"name\") AS \"count\" FROM \"bro_weird\"",
-          "groupbys": [ "\"name_tag\""],
-          "wheres": [ "\"name_tag\" !~ /^dns_/ and \"name_tag\" !~ /^data_before/ and \"name_tag\" !~ /^possible_split_routing/ and \"name_tag\" !~ /^binpac exception/" ]
+          "query": "SELECT sum(\"seen_bytes\") AS \"bytes\" FROM bro_files",
+          "groupbys": [ "\"source\"", "\"is_orig\"", "\"local_orig\"" ],
+          "wheres": []
         }
       ],
-      "type": "line-stepplot"
+      "type": "line"
     },
     {
       "x": 8,
